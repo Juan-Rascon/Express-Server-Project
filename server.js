@@ -11,7 +11,7 @@ const fs = require('fs');
 const app = express();
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // //Add middleware to express to look for files
 app.use(express.urlencoded({ extended: true }));
@@ -58,4 +58,4 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+app.listen(PORT, () => {});
